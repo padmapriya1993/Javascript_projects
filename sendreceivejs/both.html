@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="js/script.js"></script>
+<link rel="stylesheet" href="css/style.css">
+<style>
+    input{width: 40%;height: 40px;}
+    h2,p{color: blue;}
+    button{width: 40%;height: 40px;background-color: blue;color:white;}
+</style>
+</head>
+<body>
+    <h2>Chatting Between Two Persons</h2>
+
+<div class="container">
+        <div class="box" style="background-color: #fcf78f;">
+            <h2>Vino</h2>
+            <img src="sendreceivejs/img1.png" width="100%">
+            <input id="i1">
+            <button onclick="sendsms()">send</button>
+        </div>
+        <div class="box" id="mydiv" style="padding-left: 10px; padding-top: 1px;"> 
+        </div>   
+        <div class="box" style="background-color: #fc8ff2;">
+            <h2 style="color:red;">Priya</h2>
+            <img src="sendreceivejs/img2.png" width="100%" height="170px">
+            <input id="i2">
+            <button onclick="sendsms()">send</button>
+        </div> 
+</div>
+
+
+<script>
+
+    function sendsms()
+    {
+        value1=document.getElementById("i1").value;
+        value2=document.getElementById("i2").value;
+        element=document.createElement("li");       //<li> </li>
+    
+    
+    if (value1!=" ")
+    {
+        text1=document.createTextNode(value1); // Hi
+        element.appendChild(text1);             //<li> Hi</li>
+        mydiv=document.getElementById("mydiv");  //
+        mydiv.appendChild(element);             //<div> <li> Hi </li> </div>
+        element.style.color="blue";
+        document.getElementById("i1").value=" ";
+    }
+    else if (value2!=" ")
+    {
+        text2=document.createTextNode(value2); // Hi
+        element.appendChild(text2);             //<li> Hi</li>
+        mydiv=document.getElementById("mydiv");  //
+        mydiv.appendChild(element);             //<div> <li> Hi </li> </div>
+        element.style.color="red";
+        document.getElementById("i2").value=" ";
+    }
+}
+
+</script>
+</body>
+
+</html>
